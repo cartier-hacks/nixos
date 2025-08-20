@@ -13,6 +13,16 @@
     ../../modules/system/device-management/logitech.nix
     ./hardware-configuration.nix
   ];
+  
+  # Desktop Specific Hyprland Monitor Config
+   home-manager.users.${config.users.users.cartier.name or "cartier"} = {
+    wayland.windowManager.hyprland.settings.monitor = [
+      # Main monitor (HP OMEN, right side, horizontal, 1440p @ 240Hz)
+      "DP-2, 2560x1440@240, 1080x0, 1"
+      # Secondary monitor (Samsung, left side, vertical, 1080p @ 239.76Hz)
+      "DP-1, 1920x1080@239.76, 0x0, 1, transform, 1"
+    ];
+   };
 
   # Mount second hard drive
   boot = {

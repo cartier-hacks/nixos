@@ -26,7 +26,7 @@ in
       (sddm-chili-theme.override {
         themeConfig = {
           background = "/etc/sddm-wallpaper.png";
-          ScreenWidth = "3440";
+          ScreenWidth = "2560";
           ScreenHeight = "1440";
           recursiveBlurLoops = 1;
           recursiveBlurRadius = 10;

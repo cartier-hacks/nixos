@@ -22,7 +22,7 @@
               "volume"
               "network"
               "notifications"
-              "battery"
+
             ];
           };
         };
