@@ -15,6 +15,7 @@
     ./common/yazi.nix
     ./common/fzf.nix
     ./hyprland
+    ./common/vscode.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -88,6 +89,7 @@ services.udiskie = {
       XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
       XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
       XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
+      QT_QPA_PLATFORM = "wayland";
     };
   };
 

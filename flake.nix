@@ -69,7 +69,6 @@
       nixosConfigurations = {
         desktop = mkHost "desktop" [
           ./modules/system/nvidia.nix
-          ./modules/system/nfs.nix
           ./modules/system/display-manager/sddm.nix
           ./modules/system/gaming.nix
         ];

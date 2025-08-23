@@ -5,8 +5,6 @@
   ...
 }:
 
-
-
 {
   imports = [
     ./binds.nix
@@ -14,6 +12,8 @@
     ./hyprpanel.nix
     ./wofi.nix
     ./desktop-env.nix
+    ./screenshots.nix
+    #./hyprpanel2.nix
   ];
 
   home = {
@@ -26,10 +26,8 @@
       libnotify
 
       # Screenshots
-      grim
-      slurp
+
       wl-clipboard
-      hyprshot
 
       # Desktop env
       hyprpanel
@@ -80,17 +78,23 @@
       };
 
       workspace = [
-        "1, persistent:true"
-        "2, persistent:true"
-        "3, persistent:true"
-        "4, persistent:true"
-        "5, persistent:true"
-        "6, persistent:true"
+        "1, persistent:true, monitor:DP-2"
+        "2, persistent:true, monitor:DP-2"
+        "3, persistent:true, monitor:DP-2"
+        "4, persistent:true, monitor:DP-2"
+        "5, persistent:true, monitor:DP-2"
+        "6, persistent:true, monitor:DP-2"
       ];
 
       # Window rules
+
       windowrulev2 = [
         "opacity 0.85, class:^(Code)$"
+        "move 0 0,class:(flameshot),title:(flameshot)"
+        "pin,class:(flameshot),title:(flameshot)"
+        "fullscreenstate,class:(flameshot),title:(flameshot)"
+        "float,class:(flameshot),title:(flameshot)"
+        "monitor DP-2, class:^(flameshot)$"
       ];
 
       decoration = {

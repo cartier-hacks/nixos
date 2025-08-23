@@ -1,12 +1,19 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  assets,
+  ...
+}:
 
 {
+  home.file.".face.icon".source = "${assets}/user-icon.png";
   programs.hyprpanel = {
     enable = true;
     settings = {
       bar = {
         layouts = {
-          "0" = {
+          # main monitor
+          "1" = {
             left = [
               "dashboard"
               "workspaces"
@@ -24,6 +31,18 @@
               "notifications"
 
             ];
+          };
+          # second monitor
+          "0" = {
+            left = [
+              "dashboard"
+              "workspaces"
+              "systray"
+            ];
+            middle = [
+              "clock"
+            ];
+
           };
         };
       };

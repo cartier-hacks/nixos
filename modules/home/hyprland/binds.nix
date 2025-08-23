@@ -23,7 +23,7 @@
     ];
 
     # Media Keys
-    
+
     bindle = [
       ", XF86AudioRaiseVolume, exec, wpctl set-volume 54 1%+"
       ", XF86AudioLowerVolume, exec, wpctl set-volume 54 1%-"
@@ -32,6 +32,8 @@
     ];
     bind = [
       # Start programs
+      "$mod, a, exec, discord"
+      "$mod, z, exec, obsidian"
       "$mod, t, exec, $terminal"
       "$mod CTRL, 1, exec, $browser"
       "$mod SHIFT, p, exec, $browser --incognito"
@@ -43,7 +45,6 @@
       "$mod ALT, p, exec, eza -ld $HOME/projects/* --color=never | awk '{print $7}' | wofi --dmenu --prompt \"Open project:\" | xargs -I{} code {} -n && exit"
       "$mod, RETURN, exec, $webapphttps://claude.ai"
 
-
       # Window and workspace navigation
       # Move between windows with vim keys
       "$mod, h, movefocus, l"
@@ -54,10 +55,17 @@
       # Move between workspaces
       "$mod ALT, l, movetoworkspace, r+1"
       "$mod ALT, h, movetoworkspace, r-1"
-      "$mod SHIFT, l, workspace, r+1"
-      "$mod SHIFT, h, workspace, r-1"
+      # "$mod SHIFT, l, workspace, r+1"
+      # "$mod SHIFT, h, workspace, r-1"
       # Window management
       "$mod, 0, layoutmsg, rollnext"
+
+      # Switch between Monitors
+      "$mod SHIFT, l, movewindow, mon:-1"
+      "$mod SHIFT, h, movewindow, mon:+1"
+
+      # Grimblast Screenshots
+      "$mod, Print, exec, grimblast copy area"
 
       "$mod, f, fullscreen, 0"
       "$mod, v, togglefloating, active"

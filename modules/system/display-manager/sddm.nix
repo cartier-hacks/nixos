@@ -59,5 +59,33 @@ in
       qtsvg
       qtdeclarative # QtQuick core
     ];
+    settings = {
+      X11 = {
+        DisplayCommand = "/etc/sddm/Xsetup";
+      };
+    };
+  };
+
+  # Script for login screen to only show on primary monitor
+  environment.etc."sddm/Xsetup" = {
+    text = ''
+      #!/bin/sh
+      sleep 1
+      # Log to see if script runs
+      echo "SDDM Xsetup script running at $(date)" >> /tmp/sddm-setup.log
+
+      # List available displays
+      xrandr --query >> /tmp/sddm-setup.log 2>&1
+
+      # Configure monitors
+      echo "Setting DP-2 as primary" >> /tmp/sddm-setup.log
+      xrandr --output DP-2 --primary --auto >> /tmp/sddm-setup.log 2>&1
+
+      echo "Turning off DP-1" >> /tmp/sddm-setup.log  
+      xrandr --output DP-1 --off >> /tmp/sddm-setup.log 2>&1
+
+      echo "Xsetup script completed" >> /tmp/sddm-setup.log
+    '';
+    mode = "0755";
   };
 }
