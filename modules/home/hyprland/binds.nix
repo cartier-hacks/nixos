@@ -12,6 +12,8 @@
     "$terminal" = "kitty";
     "$file_browser" = "thunar";
     "$webapp" = "$browser --new-window --app=";
+    "$discord" =
+      "flatpak run --branch=stable --arch=x86_64 --command=com.discordapp.Discord --file-forwarding com.discordapp.Discord @@u %U @@";
 
     binds = {
       drag_threshold = 10;
@@ -32,7 +34,7 @@
     ];
     bind = [
       # Start programs
-      "$mod, a, exec, discord"
+      "$mod, a, exec, $discord"
       "$mod, z, exec, obsidian"
       "$mod, t, exec, $terminal"
       "$mod CTRL, 1, exec, $browser"

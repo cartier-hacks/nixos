@@ -25,6 +25,7 @@
               "clock"
             ];
             right = [
+              "cputemp"
               "media"
               "volume"
               "network"
@@ -41,6 +42,9 @@
             ];
             middle = [
               "clock"
+            ];
+            right = [
+              "cputemp"
             ];
 
           };
