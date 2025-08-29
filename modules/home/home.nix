@@ -16,6 +16,7 @@
     ./common/fzf.nix
     ./hyprland
     ./common/vscode.nix
+    ./common/obs.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -27,17 +28,17 @@
   #     package = pkgs.papirus-icon-theme;
   #   };
   # };
-services.udiskie = {
+  services.udiskie = {
     enable = true;
     settings = {
-        # workaround for
-        # https://github.com/nix-community/home-manager/issues/632
-        program_options = {
-            # replace with your favorite file manager
-            file_manager = "${pkgs.xfce.thunar}/bin/thunar";
-        };
+      # workaround for
+      # https://github.com/nix-community/home-manager/issues/632
+      program_options = {
+        # replace with your favorite file manager
+        file_manager = "${pkgs.xfce.thunar}/bin/thunar";
+      };
     };
-};
+  };
   home = {
     username = "cartier";
     homeDirectory = "/home/cartier";

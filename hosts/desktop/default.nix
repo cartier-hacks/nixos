@@ -13,7 +13,9 @@
     ../../modules/system/device-management/logitech.nix
     ./hardware-configuration.nix
     ../../modules/system/gaming.nix
+    #../../modules/home/common/obs.nix
   ];
+
   # Set primary monitor for SDDM login screen
   services.xserver.displayManager.sddm.settings = {
     General = {
