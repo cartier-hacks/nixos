@@ -12,5 +12,6 @@
   environment.systemPackages = with pkgs; [
     gamemode
     ffmpeg-full
+    (obs-studio.override { ffmpeg = ffmpeg-full; })
   ];
 }

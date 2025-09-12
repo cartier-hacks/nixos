@@ -10,7 +10,7 @@
     ./binds.nix
     ./hyprpaper.nix
     ./hyprpanel.nix
-    ./wofi.nix
+    #./wofi.nix
     ./desktop-env.nix
     ./screenshots.nix
     #./hyprpanel2.nix

@@ -18,7 +18,7 @@
     ./common/vscode.nix
     ./common/obs.nix
   ];
-
+  nixpkgs.overlays = [ inputs.waycast.overlays.default ];
   nixpkgs.config.allowUnfree = true;
 
   # gtk = {
@@ -53,6 +53,7 @@
       bat
       eza
       jq
+      waycast
 
       # Dev tools
       jetbrains.datagrip

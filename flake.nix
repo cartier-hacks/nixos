@@ -1,6 +1,7 @@
 {
   description = "cartier's computer configuration";
   inputs = {
+    waycast.url = "git+https://gitgud.foo/thegrind/waycast";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,6 +17,7 @@
     my-assets = {
       url = "path:./assets";
       flake = false;
+
     };
   };
 
@@ -32,6 +34,7 @@
       # Common overlays for all hosts
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
+        inputs.waycast.overlays.default
       ];
 
       # Helper function to create a host configuration

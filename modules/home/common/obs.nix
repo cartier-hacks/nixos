@@ -2,7 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    obs-studio
+    (obs-studio.override {
+      cudaSupport = true;
+    })
   ];
 
   xdg.configFile."obs-studio" = {
