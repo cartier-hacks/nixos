@@ -17,8 +17,8 @@
     ./hyprland
     ./common/vscode.nix
     ./common/obs.nix
+    ./common/waycast.nix
   ];
-  nixpkgs.overlays = [ inputs.waycast.overlays.default ];
   nixpkgs.config.allowUnfree = true;
 
   # gtk = {
@@ -47,13 +47,13 @@
       # Basics
       quickshell
       obsidian
+      libreoffice
 
       # Terminal tools
       ripgrep
       bat
       eza
       jq
-      waycast
 
       # Dev tools
       jetbrains.datagrip

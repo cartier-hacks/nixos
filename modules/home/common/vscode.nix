@@ -236,7 +236,7 @@
       };
       "svelte.enable-ts-plugin" = true;
       "workbench.sideBar.location" = "left";
-      "workbench.panel.defaultLocation" = "right";
+      "workbench.panel.defaultLocation" = "bottom";
     };
 
     # Keybindings

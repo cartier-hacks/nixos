@@ -693,11 +693,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1757641686,
-        "narHash": "sha256-2y71+16em0V9ZhyVkRekpq9IVjtmk0Xj/lBwr1UNfbc=",
+        "lastModified": 1758555019,
+        "narHash": "sha256-0hHZZ8L7VKWs8n/+RokuieqG/2t8wjA9WX4VaEBwzt0=",
         "ref": "refs/heads/master",
-        "rev": "45e7f93c0f9cfef71ccead95a5125b2b172fd0d3",
-        "revCount": 87,
+        "rev": "82eddd5b2d4a5dabd509e12f2a3fa3f53f89ca04",
+        "revCount": 118,
         "type": "git",
         "url": "https://gitgud.foo/thegrind/waycast"
       },
