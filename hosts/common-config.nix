@@ -94,6 +94,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable NoiseTorch with proper capabilities
+  programs.noisetorch.enable = true;
+
   environment = {
     systemPackages = with pkgs; [
       brave

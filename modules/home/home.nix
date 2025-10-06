@@ -19,6 +19,7 @@
     ./common/obs.nix
     ./common/waycast.nix
   ];
+  nixpkgs.overlays = [ inputs.waycast.overlays.default ];
   nixpkgs.config.allowUnfree = true;
 
   # gtk = {
@@ -48,6 +49,8 @@
       quickshell
       obsidian
       libreoffice
+      discord
+      apple-cursor
 
       # Terminal tools
       ripgrep
@@ -59,7 +62,6 @@
       jetbrains.datagrip
       vscode
       nixfmt # Nix formatting
-      pkgs.libsForQt5.full # QML formatting (for working on quickshell)
       claude-code
       xsel
       nss.tools
@@ -93,6 +95,15 @@
       XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
       QT_QPA_PLATFORM = "wayland";
     };
+  };
+
+  # Apple Cursor
+  home.pointerCursor = {
+    name = "macOS";
+    package = pkgs.apple-cursor;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 
   # Programs home manager should manage

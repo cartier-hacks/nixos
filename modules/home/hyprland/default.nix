@@ -61,6 +61,12 @@
 
     settings = {
 
+      # MacOS Cursors
+      env = [
+        "XCURSOR_THEME,macOS"
+        "XCURSOR_SIZE,24"
+      ];
+
       input = {
         repeat_delay = 200;
         repeat_rate = 20;
@@ -111,6 +117,8 @@
       exec-once = [
         # "quickshell -c hyprshell"
         "hyprpanel"
+        # macOS cursor
+        "hyprctl setcursor macOS 24"
       ];
     };
 

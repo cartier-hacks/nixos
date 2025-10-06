@@ -13,8 +13,8 @@
     enable = true;
 
     # User information (from your init.sh)
-    userName = "cartierf89";
-    userEmail = "cartierer0eduardo@hotmail.com";
+    userName = "cartier";
+    userEmail = "cartierhacks@gmail.com";
 
     # Git settings
     extraConfig = {
