@@ -675,17 +675,17 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1758653299,
-        "narHash": "sha256-WchQGWNtEZFVIyOUBos4ZU5aleU4GHEqPdJ+Qm1pyvg=",
-        "ref": "refs/heads/master",
-        "rev": "3ab1a80c95183c3864aebec1b22284379162b195",
-        "revCount": 131,
-        "type": "git",
-        "url": "https://gitgud.foo/thegrind/waycast"
+        "lastModified": 1759471871,
+        "narHash": "sha256-2zihw/H5FPlTECYV7zBk8pdyj9nYNLwGK/tvFpnaaMo=",
+        "owner": "javif89",
+        "repo": "waycast",
+        "rev": "b95f0f21313f5fb3bf6fe8a260fb5f40d753c30b",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://gitgud.foo/thegrind/waycast"
+        "owner": "javif89",
+        "repo": "waycast",
+        "type": "github"
       }
     }
   },

@@ -14,6 +14,7 @@
     ./desktop-env.nix
     ./screenshots.nix
     #./hyprpanel2.nix
+    ../common/waycast.nix
   ];
 
   home = {
@@ -60,6 +61,10 @@
     enable = true;
 
     settings = {
+
+      layerrule = [
+        "noanim, Waycast"
+      ];
 
       # MacOS Cursors
       env = [

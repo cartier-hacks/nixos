@@ -17,9 +17,9 @@
     ./hyprland
     ./common/vscode.nix
     ./common/obs.nix
-    ./common/waycast.nix
+    #./common/waycast.nix
   ];
-  nixpkgs.overlays = [ inputs.waycast.overlays.default ];
+
   nixpkgs.config.allowUnfree = true;
 
   # gtk = {
@@ -80,6 +80,19 @@
       go
       nodejs_22
       bun
+
+      # Waycast dependencies
+      expat
+      fontconfig
+      freetype
+      libGL
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXrandr
+      wayland
+      libxkbcommon
+      vulkan-loader
     ];
 
     sessionVariables = {

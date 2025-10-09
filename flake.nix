@@ -1,7 +1,7 @@
 {
   description = "cartier's computer configuration";
   inputs = {
-    waycast.url = "git+https://gitgud.foo/thegrind/waycast";
+    waycast.url = "github:javif89/waycast";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
