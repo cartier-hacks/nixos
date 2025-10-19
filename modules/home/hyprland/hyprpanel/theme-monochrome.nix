@@ -1,7 +1,7 @@
 {
   font.size = "14px";
   bar = {
-    background = "#000000";
+    background = "#00000080";
     border.color = "#808080";
 
     buttons = {

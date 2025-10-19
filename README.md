@@ -1,6 +1,7 @@
 # My NixOS Configuration
 
-![screenshot](screenshot.png)
+![screenshot](image2.png)
+![screenshot](image.png)
 
 My modular NixOS configuration with Home Manager integration.
 
@@ -36,7 +37,7 @@ tools since they played a lot nicer with stylix for theming as well as just resp
 - **PDF Viewer**: Okular 
 - **Audio Player**: Elisa 
 - **Archive/Zip Manager**: Ark
-- **App Launcher:** Wofi
+- **App Launcher:** Waycast (Shoutout to Javif89)
 
 ### Ecosystem
 

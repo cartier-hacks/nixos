@@ -192,7 +192,7 @@
   # Theme
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     # image = "/home/cartier/Documents/wallpapers/Fantasy-Mountain.png";
     polarity = "dark";
   };

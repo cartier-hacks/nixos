@@ -135,6 +135,7 @@
     enable = true;
     targets = {
       btop.enable = true;
+      vscode.enable = true;
     };
   };
 
