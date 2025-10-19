@@ -31,9 +31,26 @@
     };
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [
+      50000
+      65535
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1024;
+        to = 65535;
+      }
+    ];
+  };
+
   time = {
     timeZone = "America/New_York";
   };
+
+  # Virtualisation
+  virtualisation.docker.enable = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -120,6 +137,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
   };
 
@@ -135,8 +153,11 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
+    download-buffer-size = 134217728;
+    http2 = false;
     substituters = [
       "https://cache.nixos.org/"
+      "https://nix-community.cachix.org"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -178,6 +199,7 @@
 
   # Enable home manager
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = {
       inherit inputs;
       assets = assets;

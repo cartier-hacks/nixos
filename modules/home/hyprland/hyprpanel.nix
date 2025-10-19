@@ -65,7 +65,7 @@
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = true;
 
-      theme = import ./hyprpanel/theme-gruvbox.nix;
+      theme = import ./hyprpanel/theme-monochrome.nix;
 
       # theme.bar.transparent = {
       #   transparent = false;

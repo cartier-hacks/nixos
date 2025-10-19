@@ -65,6 +65,7 @@
       claude-code
       xsel
       nss.tools
+      docker
 
       # System tools
       btop
@@ -123,6 +124,10 @@
   programs = {
     btop = {
       enable = true;
+    };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 

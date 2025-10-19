@@ -675,11 +675,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1759471871,
-        "narHash": "sha256-2zihw/H5FPlTECYV7zBk8pdyj9nYNLwGK/tvFpnaaMo=",
+        "lastModified": 1760068861,
+        "narHash": "sha256-zIYfMPXR1bxbKePAqc1Ex7NM1pEL6MZQc4BKkf9zWog=",
         "owner": "javif89",
         "repo": "waycast",
-        "rev": "b95f0f21313f5fb3bf6fe8a260fb5f40d753c30b",
+        "rev": "f2523957226aec72b48a3f6f5b8e540594124a0f",
         "type": "github"
       },
       "original": {

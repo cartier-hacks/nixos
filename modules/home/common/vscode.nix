@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
@@ -11,68 +12,114 @@
     package = pkgs.vscode; # or pkgs.vscodium for the open-source version
 
     # Extensions
-    extensions =
+    profiles.default.extensions =
       with pkgs.vscode-extensions;
       [
-        # adpyke.vscode-sql-formatter
-        # adrianwilczynski.alpine-js-intellisense
-        # anthropic.claude-code
-        bmewburn.vscode-intelephense-client
-        bradlc.vscode-tailwindcss
-        catppuccin.catppuccin-vsc-icons
-        christian-kohler.path-intellisense
-        # cierra.livewire-vscode
-        # delgan.qml-format
+        # Misc
+        vscodevim.vim
         eamodio.gitlens
-        formulahendry.auto-close-tag
-        formulahendry.auto-rename-tag
+        christian-kohler.path-intellisense
+        catppuccin.catppuccin-vsc-icons
         foxundermoon.shell-format
-        golang.go
         gruntfuggly.todo-tree
-        # isudox.vscode-jetbrains-keybindings
         jdinhlife.gruvbox
-        jnoortheen.nix-ide
-        # kennylong.kubernetes-yaml-formatter
-        mikestead.dotenv
-        ms-python.debugpy
-        ms-python.python
-        ms-python.vscode-pylance
-        # ms-python.vscode-python-envs
-        # ms-vsliveshare.vsliveshare
-        # neilbrayfield.php-docblocker
-        # onecentlin.laravel-blade
-        # phiter.phpstorm-snippets
-        pkief.material-icon-theme
         redhat.ansible
         redhat.vscode-yaml
         shd101wyy.markdown-preview-enhanced
-        svelte.svelte-vscode
+        ms-vsliveshare.vsliveshare
+        pkief.material-icon-theme
         tamasfe.even-better-toml
-        # theqtcompany.qt-core
-        # theqtcompany.qt-qml
-        vscodevim.vim
+        # PHP
+        bmewburn.vscode-intelephense-client
+        # Html/Front End Support
+        bradlc.vscode-tailwindcss
+        formulahendry.auto-close-tag
+        formulahendry.auto-rename-tag
+        svelte.svelte-vscode
         vue.volar
-        # zignd.html-css-class-completion
-
+        # Go
+        golang.go
+        mikestead.dotenv
+        # Python
+        ms-python.debugpy
+        ms-python.python
+        ms-python.vscode-pylance
+        # Rust
+        rust-lang.rust-analyzer
+        # C++
+        ms-vscode.cpptools
+        ms-vscode.cmake-tools
+        # delgan.qml-format
+        # Nix
+        mkhl.direnv
+        jnoortheen.nix-ide
+        # adpyke.vscode-sql-formatter
+        # adrianwilczynski.alpine-js-intellisense
+        # anthropic.claude-code
+        # cierra.livewire-vscode
+        # neilbrayfield.php-docblocker
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        # # Extensions not in nixpkgs
-        # {
-        #   name = "copilot";
-        #   publisher = "github";
-        #   version = "1.86.82";
-        #   sha256 = "sha256-example-hash-here";
-        # }
+        # Extensions not in nixpkgs
+        {
+          name = "base16-tinted-themes";
+          publisher = "TintedTheming";
+          version = "0.27.0";
+          sha256 = "7wLBwfaXEoumAfp9kK5Mv1VaGffuGdoYMGZ+ZjN9G8Q=";
+        }
+        {
+          name = "vscode-laravel";
+          publisher = "laravel";
+          version = "1.0.14";
+          sha256 = "DEHr8kAGm6ShdQCThh7MUhv24Ghwg10mGDhZgUIojrY=";
+        }
+        {
+          name = "phpstorm-snippets";
+          publisher = "phiter";
+          version = "1.1.2";
+          sha256 = "EHEzM4YKYR+2r6RVun8tSjGYDsbriBPATNwxczEuqjQ=";
+        }
+        {
+          name = "laravel-blade";
+          publisher = "onecentlin";
+          version = "1.37.0";
+          sha256 = "q5CTRj746404yM9mhOWYAGTzt/8CJ7Fx4QUQSJ+LdLs=";
+        }
+        {
+          name = "vscode-antlers";
+          publisher = "stillat-llc";
+          version = "2.6.22";
+          sha256 = "3JtT5AxtbxciivfG6JaUYNPL74+8ydhDeB7SCE/92ko=";
+        }
+        # Qt Extension Pack
+        {
+          name = "qt-qml";
+          publisher = "TheQtCompany";
+          version = "1.7.0";
+          sha256 = "QjfvZIcE4LcJU93YiYN/zykEluHtR7zVOwYiPL0k+cQ=";
+        }
+        {
+          name = "qt-ui";
+          publisher = "TheQtCompany";
+          version = "1.7.0";
+          sha256 = "XDOIyCZIUYPGfcszZMUkR9MHH+zrXZgympKNhcQwITY=";
+        }
+        {
+          name = "qt-core";
+          publisher = "TheQtCompany";
+          version = "1.7.0";
+          sha256 = "2413vMpvxSYBKpaD14sMgI92W8NtCYa/sJ7PZO62WfY=";
+        }
       ];
 
     # User settings
-    userSettings = {
+    profiles.default.userSettings = {
       # Disable the fucking copilot chat
       "github.copilot.chat.showChatPanel" = false;
       "github.copilot.enable" = false;
       "window.titleBarStyle" = "custom";
       "window.customTitleBarVisibility" = "auto";
-      "workbench.colorTheme" = lib.mkForce "Gruvbox Dark Hard";
+      "workbench.colorTheme" = lib.mkForce "Stylix";
       "git.autofetch" = true;
       "editor.fontSize" = lib.mkForce 18;
       "editor.snippetSuggestions" = "top";
@@ -151,6 +198,7 @@
         "storage" = true;
         ".phpunit.result.cache" = true;
       };
+      "terminal.integrated.stickyScroll.enabled" = false;
       "scm.diffDecorations" = "none";
       "editor.hover.enabled" = false;
       "editor.matchBrackets" = "never";
@@ -172,8 +220,21 @@
       "workbench.editor.enablePreviewFromQuickOpen" = false;
       "editor.gotoLocation.multipleImplementations" = "goto";
       "editor.gotoLocation.multipleTypeDefinitions" = "goto";
-      "editor.cursorSurroundingLines" = 16;
+      "editor.cursorSurroundingLines" = 200;
       "workbench.editor.pinnedTabsOnSeparateRow" = true;
+      "C_Cpp.default.compileCommands" = "\${workspaceFolder}/build/compile_commands.json";
+      "C_Cpp.default.configurationProvider" = "ms-vscode.cmake-tools";
+      # Rust Analyzer
+      "rust-analyzer.inlayHints.chainingHints.enable" = false;
+      "rust-analyzer.inlayHints.closingBraceHints.enable" = false;
+      "rust-analyzer.inlayHints.parameterHints.enable" = false;
+      "rust-analyzer.inlayHints.typeHints.enable" = false;
+      "rust-analyzer.inlayHints.closureStyle" = "hide";
+      # Antlers (Statamic)
+      "antlersLanguageServer.languageVersion" = "runtime";
+      "[antlers]" = {
+        "editor.defaultFormatter" = "html";
+      };
       "window.menuBarVisibility" = "compact";
       "vim.leader" = "<space>";
       "vim.normalModeKeyBindings" = [
@@ -236,11 +297,11 @@
       };
       "svelte.enable-ts-plugin" = true;
       "workbench.sideBar.location" = "left";
-      "workbench.panel.defaultLocation" = "bottom";
+      "workbench.panel.defaultLocation" = "left";
     };
 
     # Keybindings
-    keybindings = [
+    profiles.default.keybindings = [
       {
         "key" = "ctrl+k";
         "command" = "git.commitAll";

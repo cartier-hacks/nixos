@@ -1,12 +1,12 @@
 {
   description = "cartier's computer configuration";
   inputs = {
-    waycast.url = "github:javif89/waycast";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waycast.url = "github:javif89/waycast";
     hyprshell.url = "git+https://gitgud.foo/thegrind/hypr-shell.git";
     stylix = {
       url = "github:danth/stylix";
