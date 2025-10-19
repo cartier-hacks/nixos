@@ -1,6 +1,6 @@
 # My NixOS Configuration
 
-![screenshot](image2.png)
+![screenshot](image1.png)
 ![screenshot](image.png)
 
 My modular NixOS configuration with Home Manager integration.
